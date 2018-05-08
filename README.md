@@ -17,7 +17,8 @@
  - !css
    - !base
      - 기본으로 깔리는 css정의. common, font, reset
-   - !component
+     @index.html : base 들의 파일 모음. ex   @import url(base/common.css);
+     - !component
      - 각 component별 css정의
    - !lib
      - 외부 css정의(slick.css)
