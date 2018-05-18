@@ -13,9 +13,9 @@
  - !js
    - !lib
      - 외부 스크립트 정의 ( jquery, jquery-ui를 제외한 나머지)
-   - base
+   - !base
      - 제이쿼리종류들..jquery, jquery-ui등등
-   - custom
+   - !custom
      - 실제 작업 custom.js
  - !css
    - !base
