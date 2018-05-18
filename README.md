@@ -12,20 +12,21 @@
 !assets 
  - !js
    - !lib
-     - 외부 스크립트 정의 ( jquery, jquery-ui, slick)
-   - @내가 짜는 스크립트.js
+     - 외부 스크립트 정의 ( jquery, jquery-ui를 제외한 나머지)
+  - base
+     - 제이쿼리종류들..jquery, jquery-ui등등
+  - custom
+     - 실제 작업 custom.js
  - !css
    - !base
-     - 기본으로 깔리는 css정의. common, font, reset
-     @index.html : base 들의 파일 모음. ex   @import url(base/common.css);
-     - !component
+     - 기본으로 깔리는 css정의. common, font, reset, 기본 사용자 정의 css(mt:30px)
+     @index.css : base 들의 파일 모음. ex   @import url(base/common.css);
+   - !component
      - 각 component별 css정의
-   - !lib
+     - component.css (@import url(_header.scss) 처럼
+   - !lib
      - 외부 css정의(slick.css)
    - !module 
-     - btn 정의
      - mixin 정의
-   - @기본 사용자 정의 css(mt:30px)
-   - 색상 정의
-
+   
 ##### 나만의 css 컨벤션 추가 하기. 
