@@ -26,8 +26,8 @@
 │ ├──reset.css , font.css, commmon.css, basic.css(사용자정의 css mg:30px), index.css('다른 css들 @import');
 │ ├─!component		#각 component별 css정의
 │ ├─!lib		#외부 css정의(slick.css)
-│ ├─!module 		#mixin 정의
-┗ ┘
+└─!module 		#mixin 정의
+
 </pre>
 ##### 나만의 css 컨벤션 추가 하기. 
 
