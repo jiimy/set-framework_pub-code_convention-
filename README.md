@@ -14,16 +14,15 @@
 #### !는 폴더. @는 파일
 <pre>
 !html 
- - @main.html
-
+├─@main.html
+├─@sub1.html  #sub페이지 늘어남.
 !assets 
 ├─!js
 │ ├─!lib		#외부 스크립트 정의 ( jquery, jquery-ui를 제외한 나머지)
 │ ├─!base		#제이쿼리종류들..jquery, jquery-ui등등
 │ ├─!custom		#실제 작업 custom.js
 ├─!css
-│ ├─!base
-│ ├──reset.css , font.css, commmon.css, basic.css(사용자정의 css mg:30px), index.css('다른 css들 @import');
+│ ├─!base  #reset.css , font.css, commmon.css, basic.css(사용자정의 css mg:30px), index.css('다른 css들 @import');
 │ ├─!component		#각 component별 css정의
 │ ├─!lib		#외부 css정의(slick.css)
 └─!module 		#mixin 정의
@@ -31,5 +30,3 @@
 </pre>
 ##### 나만의 css 컨벤션 추가 하기. 
 
-
-##### 나만의 css 컨벤션 추가 하기. 
