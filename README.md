@@ -30,6 +30,22 @@ display 부분 .block{display:block!important;}
 margin 종류들 .mr30{margin-right:30px;}
 
 ```
+##### js 부분 
+```
+//
+//익명함수 - 생성 후 함수 종료 후 바로 선언
+    var browserWidthCheck = function(){
+        if($(window).width() < 1024){
+            $('html').addClass('under1024').removeClass('over1024')
+        }else{
+            $('html').addClass('over1024').removeClass('under1024')
+        }
+    }
+    browserWidthCheck();
+
+```
+
+
 ##### mixin 정의하기
 ```
 ```
