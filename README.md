@@ -14,12 +14,11 @@
 │ ├─!lib		#외부 스크립트 정의 ( jquery, jquery-ui를 제외한 나머지)
 │ ├─!base		#제이쿼리종류들..jquery, jquery-ui등등
 │ ├─!custom		#실제 작업 custom.js
-├─!css
-│ ├─!base
-│ ├──reset.css , font.css, commmon.css, basic.css(사용자정의 css mg:30px), index.css('다른 css들 @import');
-│ ├─!component		#각 component별 css정의
-│ ├─!lib		#외부 css정의(slick.css)
-└─!module 		#mixin 정의
+└─!css
+  ├─!base #reset.css , font.css, commmon.css, basic.css(사용자정의 css mg:30px), index.css('다른 css들 @import');
+  ├─!component		#각 component별 css정의, index.css
+  ├─!lib		#외부 css정의(slick.css) 
+  └─!module 		#mixin 정의
 
 </pre>
 
