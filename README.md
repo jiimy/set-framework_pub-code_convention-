@@ -13,13 +13,13 @@
 │ ├─!base		#제이쿼리종류들..jquery, jquery-ui등등
 │ ├─!custom		#실제 작업 custom.js
 └─!css
-  ├─!base #reset.css , font.css, commmon.css, basic.css(사용자정의 css mg:30px), index.Scss('다른 css들 @import');
+  ├─!base        #reset.css , font.css, commmon.css, basic.css(사용자정의 css mg:30px), index.Scss('다른 css들 @import');
   ├─!component		#각 component별 css정의, 구분별로 폴더로 따로 만들어도됨. index.Scss
   ├─!lib		#외부 css정의(slick.css) 
-  └─!module 		#mixin 정의
+  └─!module 		#mixin.css mixin및 $등등 scss함수들
 !html
 ├─main.html(jsp) #link:css(../assets/css/base/(컴파일된 index.css)..등등 /*css폴더 안에서 index로 각각의 폴더안의 css묶어도될듯*/)
-│ └─header.(jsp) #jsp로 사용할대는 header.jsp, footer.jsp, popup.jsp 등등 공통으로 쓰이는 것들 분할  
+│ └─header.(jsp) #jsp로 사용할때는 header.jsp, footer.jsp, popup.jsp 등등 공통으로 쓰이는 것들 분할
 ├─sub1.html(jsp)
 └─sub..html(jsp)
 </pre>
@@ -29,7 +29,7 @@
 
 ##### css 컨벤션.
 ```
-이하 변수 선언 $
+이하 변수 선언 $ (oocss기법?)
 display 부분 .block{display:block!important;}
              .none{display:none!important;}
 margin 종류들 .mr30{margin-right:30px;}
@@ -44,8 +44,10 @@ margin 종류들 .mr30{margin-right:30px;}
 
 ##### 클래스 네이밍
 ```
-기본적으로 카멜표기법.
+- 기본적으로 카멜표기법.
 동사먼저 오기, button은 Btn으로 -> .showBtn
+- bem기법 
+전체구조를 본다음 최대4단계까지 클래스를 어떻게 줄지 생각하고 5단계 이상 간다면 카멜표기법으로 구성 = 최대한 작은 단위로 구조 쪼개기
 
 --추가 작성중--
 ```
@@ -63,6 +65,12 @@ margin 종류들 .mr30{margin-right:30px;}
     browserWidthCheck();
 --추가 작성중--
 ```
+
+==위의 규칙에 따른 작업으로 나오는 결과는 처음 구조(폴더생성 및 연결)에 시간이 오래걸리나 구조를 파악에 용이하고 작업시 또는 수정시 리팩토링시 원할한 ==
+==요약 - 실제 작업하기 전 선작업 : 전체적인 프로젝트 파악이 중요==
+==                        장점 : 수정 및 구조 파악에 용이==
+==                        단점 : 작업환경 구성이 오래걸림==
+
 
 #### scss 주요기능
 
