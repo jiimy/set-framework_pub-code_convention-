@@ -47,4 +47,99 @@ margin 종류들 .mr30{margin-right:30px;}
 
 ##### mixin 정의하기
 ```
+
+
+
+```
+
+##### 기타 표현법
+```
+//변수로 표현
+$bg-color1:#fefec2;
+
+//de-nest
+.container {
+  .child {
+    color: blue;
+  }
+  @at-root .sibling {
+    color: gray;
+  }
+}
+
+//extend(상속)
+*----Sass
+.box {
+  border: 1px solid gray;
+}
+
+.success-box {
+  @extend .box;
+  border: 1px solid green;
+}
+*----css
+.box, .success-box {
+  border: 1px solid gray;
+}
+
+.success-box {
+  border: 1px solid green;
+}
+->.box의 속성들을 받아온다. 
+
+//placeholder 
+*----Sass
+%box {
+  padding: 0.5em;
+
+}
+.success-box {
+  @extend %box;
+  color: green;
+}
+.error-box {
+  @extend %box;
+  color: red;
+}
+%box {
+  padding: 0.5em;
+
+}
+
+.success-box {
+  @extend %box;
+  color: green;
+}
+
+.error-box {
+  @extend %box;
+  color: red;
+}
+*----css
+.success-box, .error-box {
+  padding: 0.5em;
+}
+.success-box {
+  color: green;
+}
+.error-box {
+  color: red;
+}
+->%를 사용하면 상속은 하지만 해당 선택자는 컴파일 되지 않는다? (따로 빼낸다는 뜻인가)
+
+//Mixin(믹스인)
+*----Sass
+@mixin headline ($color, $size) {
+  color: $color;
+  font-size: $size;
+}
+
+h1 {
+  @include headline(green, 12px);
+}
+*----css
+h1 {
+  color: green;
+  font-size: 12px;
+}
 ```
