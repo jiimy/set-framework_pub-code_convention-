@@ -24,14 +24,22 @@
 
 ##### css 컨벤션.
 ```
+이하 변수 선언 $
 display 부분 .block{display:block!important;}
              .none{display:none!important;}
 margin 종류들 .mr30{margin-right:30px;}
 
 ```
+
+##### 클래스 네이밍
+```
+기본적으로 카멜표기법.
+동사먼저 오기, button은 Btn으로 -> .showBtn
+
+```
+
 ##### js 부분 
 ```
-//
 //익명함수 - 생성 후 함수 종료 후 바로 선언
     var browserWidthCheck = function(){
         if($(window).width() < 1024){
@@ -57,6 +65,7 @@ margin 종류들 .mr30{margin-right:30px;}
 //변수로 표현
 $bg-color1:#fefec2;
 
+
 //de-nest
 .container {
   .child {
@@ -66,6 +75,7 @@ $bg-color1:#fefec2;
     color: gray;
   }
 }
+
 
 //extend(상속)
 *----Sass
@@ -86,6 +96,7 @@ $bg-color1:#fefec2;
   border: 1px solid green;
 }
 ->.box의 속성들을 받아온다. 
+
 
 //placeholder 
 *----Sass
@@ -126,6 +137,7 @@ $bg-color1:#fefec2;
   color: red;
 }
 ->%를 사용하면 상속은 하지만 해당 선택자는 컴파일 되지 않는다? (따로 빼낸다는 뜻인가)
+
 
 //Mixin(믹스인)
 *----Sass
