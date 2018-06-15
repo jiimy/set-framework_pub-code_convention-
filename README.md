@@ -1,26 +1,31 @@
-# set-framework
+# set-framework - 퍼블리싱편(no gulp)
 
 ## 부트스트랩처럼 규정을 만들려고 합니다. 
 
-### 전처리 환경(less, scss, sass)에서 작업하며, spa처럼 컴포넌트 구분을 원칙으로 합니다. 
+### 전처리 환경(less는제외(cdn등 사용법이 편리), scss, sass)에서 작업하며, spa처럼 컴포넌트 구분을 원칙으로 합니다. 
 
 #### !는 폴더. @는 파일
-<pre>
-!html 
- - @main.html
 
+<pre>
 !assets 
 ├─!js
 │ ├─!lib		#외부 스크립트 정의 ( jquery, jquery-ui를 제외한 나머지)
 │ ├─!base		#제이쿼리종류들..jquery, jquery-ui등등
 │ ├─!custom		#실제 작업 custom.js
 └─!css
-  ├─!base #reset.css , font.css, commmon.css, basic.css(사용자정의 css mg:30px), index.css('다른 css들 @import');
-  ├─!component		#각 component별 css정의, index.css
+  ├─!base #reset.css , font.css, commmon.css, basic.css(사용자정의 css mg:30px), index.Scss('다른 css들 @import');
+  ├─!component		#각 component별 css정의, 구분별로 폴더로 따로 만들어도됨. index.Scss
   ├─!lib		#외부 css정의(slick.css) 
   └─!module 		#mixin 정의
-
+!html
+├─main.html(jsp) #link:css(../assets/css/base/(컴파일된 index.css)..등등 /*css폴더 안에서 index로 각각의 폴더안의 css묶어도될듯*/)
+│ └─header.(jsp) #jsp로 사용할대는 header.jsp, footer.jsp, popup.jsp 등등 공통으로 쓰이는 것들 분할  
+├─sub1.html(jsp)
+└─sub..html(jsp)
 </pre>
+
+
+#### 컨벤션
 
 ##### css 컨벤션.
 ```
@@ -29,6 +34,12 @@ display 부분 .block{display:block!important;}
              .none{display:none!important;}
 margin 종류들 .mr30{margin-right:30px;}
 
+--추가 작성중--
+```
+
+##### mixin 정의하기
+```
+
 ```
 
 ##### 클래스 네이밍
@@ -36,6 +47,7 @@ margin 종류들 .mr30{margin-right:30px;}
 기본적으로 카멜표기법.
 동사먼저 오기, button은 Btn으로 -> .showBtn
 
+--추가 작성중--
 ```
 
 ##### js 부분 
@@ -49,16 +61,11 @@ margin 종류들 .mr30{margin-right:30px;}
         }
     }
     browserWidthCheck();
-
+--추가 작성중--
 ```
 
+#### scss 주요기능
 
-##### mixin 정의하기
-```
-
-
-
-```
 
 ##### 기타 표현법
 ```
@@ -82,16 +89,15 @@ $bg-color1:#fefec2;
 .box {
   border: 1px solid gray;
 }
-
 .success-box {
   @extend .box;
   border: 1px solid green;
 }
+
 *----css
 .box, .success-box {
   border: 1px solid gray;
 }
-
 .success-box {
   border: 1px solid green;
 }
@@ -102,7 +108,6 @@ $bg-color1:#fefec2;
 *----Sass
 %box {
   padding: 0.5em;
-
 }
 .success-box {
   @extend %box;
@@ -114,18 +119,16 @@ $bg-color1:#fefec2;
 }
 %box {
   padding: 0.5em;
-
 }
-
 .success-box {
   @extend %box;
   color: green;
 }
-
 .error-box {
   @extend %box;
   color: red;
 }
+
 *----css
 .success-box, .error-box {
   padding: 0.5em;
@@ -145,10 +148,10 @@ $bg-color1:#fefec2;
   color: $color;
   font-size: $size;
 }
-
 h1 {
   @include headline(green, 12px);
 }
+
 *----css
 h1 {
   color: green;
