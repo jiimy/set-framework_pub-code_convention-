@@ -142,4 +142,5 @@ h1 {
   color: green;
   font-size: 12px;
 }
+->속성을 함수처럼 
 ```
