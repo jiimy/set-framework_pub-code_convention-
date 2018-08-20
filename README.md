@@ -45,7 +45,7 @@ margin 종류들 .mr30{margin-right:30px;}
 ##### mixin 정의하기
 ```
 font정의하기 - font-family, size, weight
-
+cursor:pointer 함수 
 --추가 작성중--
 ```
 
