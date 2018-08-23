@@ -49,6 +49,7 @@ margin 종류들 .mr30{margin-right:30px;}
 font정의하기 - font-family, size, weight
 cursor:pointer 함수 
 a링크에 대해서 pointer-events:none으로 하거나 js에서 막는 방법 
+
 --추가 작성중--
 ```
 
@@ -71,6 +72,9 @@ a링크에 대해서 pointer-events:none으로 하거나 js에서 막는 방법
 
 ##### js 부분 
 ```
+input:radio나 input:checkbox에 대하여 input+span형식으로 되어있는데 js에서 span클릭시 prev의 input을 체크한 효과를 
+
+
 //익명함수 - 생성 후 함수 종료 후 바로 선언
     var browserWidthCheck = function(){
         if($(window).width() < 1024){
