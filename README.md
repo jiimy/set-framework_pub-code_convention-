@@ -41,6 +41,10 @@ display 부분 .block{display:block!important;}
              .none{display:none!important;}
 margin 종류들 .mr30{margin-right:30px;}
 
+.unlink{
+a링크의 이벤트 막는 용도
+}
+
 --추가 작성중--
 ```
 
