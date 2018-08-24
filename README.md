@@ -1,6 +1,6 @@
 # set-framework - 퍼블리싱편(no gulp)
 
-// ## 부트스트랩처럼 규정을 만들려고 합니다. 
+<!-- ## 부트스트랩처럼 규정을 만들려고 합니다. -->
 
 ### 전처리 환경(less는제외(cdn등 사용법이 편리), scss, sass)에서 작업하며, spa중 리액트처럼 컴포넌트 구분을 원칙으로 합니다. 
 
@@ -42,13 +42,13 @@ display 부분 .block{display:block!important;}
 margin 종류들 .mr30{margin-right:30px;}
 
 .unlink{
-a링크의 이벤트 막는 용도
+a링크의 기본 이벤트 막는 용도
 }
 
 --추가 작성중--
 ```
 
-##### mixin 정의하기
+##### mixin 함수 정의하기
 ```
 font정의하기 - font-family, size, weight
 cursor:pointer 함수 
@@ -76,7 +76,7 @@ a링크에 대해서 pointer-events:none으로 하거나 js에서 막는 방법
 
 ##### js 부분 
 ```
-input:radio나 input:checkbox에 대하여 input+span형식으로 되어있는데 js에서 span클릭시 prev의 input을 체크한 효과를 
+input:radio나 input:checkbox에 대하여 input+span형식으로 되어있는데 js에서 span클릭시 prev의 input을 체크한 효과를 주게하기
 
 
 //익명함수 - 생성 후 함수 종료 후 바로 선언
