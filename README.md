@@ -24,6 +24,7 @@
 └─sub..html(jsp)
 </pre>
 
+모바일과 pc별도일시 assets 폴더 안에 pc와 mobile의 각각의 폴더가 있고 공통된 것은 assets와 형제로 둔다.
 
 - - -
 
