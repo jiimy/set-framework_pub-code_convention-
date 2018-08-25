@@ -1,3 +1,12 @@
+/* ============================ */
+/* ====== 들어가기에 앞서 ====== */
+/* ============================ */
+/* bem의 - 의 뒤에 상태를 나타내는 것과 smascss의 l-.. 의 방식, oocss의 공통된 컴포넌트 구분 방식을 사용한다. */
+/* 가독성 및 가시성에 유의하고, 이해 및 사용성의 편리에 집중한다. */
+/* 모든 text관련 css는 t- 로 명명한다. */
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* 화면 내의 모든 z-index값을 정의한다. */
 /* ============================= */
 /* = z-index 정의서 (변동 가능) = */
 /* ============================ */
@@ -17,9 +26,9 @@ slide :
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
-/* =========================== */
-/* = layout 속성 ( 추가 가능) = */
-/* =========================== */
+/* ============================ */
+/* = layout 속성 ( 추가 가능 ) = */
+/* ============================ */
 .l-left { float: left; }
 .l-right { float: right;}
 .clear_fix:after { display: block;  content: '';  clear: both; }
@@ -28,9 +37,11 @@ slide :
 .l-btnWrap { text-align: center; }
 .l-btnWrap a, .l-btnWrap div, .l_btnWrap button{ display: inline-block; }
 
-/* margin과 padding속성-마진 음수일경우 언더바로 칭함 */
+/* margin과 padding속성-마진 음수일경우 뒤에 - 를 하나 더 붙임 */
+/* 퍼센트일 경우 뒤에 p (p가 percent가 될수도, point가 될 수도 있어서 혼돈이 올 수 있겠다.) */
+.l-inner-10p{ padding: 10%; }
 .l_inner-r20{ padding-right:20px; }
-.l-outer_215{ margin-bottom: -215px; }
+.l-outer-215-{ margin-bottom: -215px; }
 
 /* width */
 .l-width240{ width: 240px; }
@@ -60,14 +71,12 @@ slide :
 /* ========================== */
 /* = text 속성 ( 추가 가능 ) = */
 /* ========================== */
-/* f-line_height */
-.f-line_height30 { line-height: 30px; }
+/*t-line_height */
+.t-line_height30 { line-height: 30px; }
 /* t-text_align */
-.f-right{ text-align: right; }
-.f-left { text-align: left; }
-.t-weight300 {
-  font-weight: 300;
-}
+.t-right{ text-align: right; }
+.t-left { text-align: left; }
+.t-weight300 { font-weight: 300; }
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
@@ -85,9 +94,19 @@ label:hover { cursor: pointer; }
 /* 탭 사용시 */
 .tab { display: none; }
 .tab_active { display: block; }
+
 /* a링크의 기본 이벤트 막기 - js상에서 할 필요가 없다. */
 .unLink { pointer-events: none; }
 .unLink:hover { cursor: pointer; }
+/* ie10이하는 작동하기 않기 때문에 아래를 사용한다. */
+.unLinkCover{
+  position: fixed;
+  opacity: 0;
+  right: 0;
+  left:0;
+  top:0;
+  bottom:0;
+}
 
 /* select 태그의 custom */
 .selectWrap { position: relative; }

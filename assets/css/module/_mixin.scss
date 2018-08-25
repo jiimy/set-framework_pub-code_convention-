@@ -19,5 +19,5 @@
 
 // *-- 반응형 bg이미지
 @function response-bg($height,$width){
-  @return (calc($height / $width * 100% );)
+  @return (calc($height / $width * 100% ))
 }
