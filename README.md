@@ -61,9 +61,9 @@ a링크에 대해서 pointer-events:none으로 하거나 js에서 막는 방법
 ##### 클래스 네이밍 및 변수 선언 규칙
 ```
 - 기본적으로 카멜표기법.
-동사먼저 오기, button은 Btn으로 -> .showBtn
+동사먼저 오기, button은 btn으로 -> .showbtn
 
-- 레이어 popup들은 pop으로 클래스 
+- 레이어 popup들은 popup으로 클래스 
 
 - bem기법 
 전체구조를 본다음 최대 4depth까지 클래스를 어떻게 줄지 생각하고 5depth이상 갈거같으면 기존 구상을 카멜표기법으로 압축하여 구성 -> 최대한 작은 단위로 구조 쪼개기
