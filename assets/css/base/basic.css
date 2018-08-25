@@ -1,0 +1,108 @@
+/* ============================= */
+/* = z-index 정의서 (변동 가능) = */
+/* ============================ */
+/*
+popup : 
+dim : 
+slide : 
+*/
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* ============================ */
+/* = display 속성 (변동 가능 ) = */
+/* ============================ */
+.block { display: block !important; }
+.none { display: none !important; }
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* =========================== */
+/* = layout 속성 ( 추가 가능) = */
+/* =========================== */
+.l-left { float: left; }
+.l-right { float: right;}
+.clear_fix:after { display: block;  content: '';  clear: both; }
+
+/* 버튼 layout의 갯수에 상관없이 가운데로 오게 하기 */
+.l-btnWrap { text-align: center; }
+.l-btnWrap a, .l-btnWrap div, .l_btnWrap button{ display: inline-block; }
+
+/* margin과 padding속성-마진 음수일경우 언더바로 칭함 */
+.l_inner-r20{ padding-right:20px; }
+.l-outer_215{ margin-bottom: -215px; }
+
+/* width */
+.l-width240{ width: 240px; }
+
+/* vertical-align */
+.l-align_middle { vertical-align: middle; }
+
+/* Special layout */
+/* 가로에 맞춰 세로도 유지되게 */
+.l-ratioBoxWrapper{
+  position: relative;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 56.26%;
+}
+.l-ratioBoxWrapper .item{
+  position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* ========================== */
+/* = text 속성 ( 추가 가능 ) = */
+/* ========================== */
+/* f-line_height */
+.f-line_height30 { line-height: 30px; }
+/* t-text_align */
+.f-right{ text-align: right; }
+.f-left { text-align: left; }
+.t-weight300 {
+  font-weight: 300;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* ====================================== */
+/* = Component 속성 ( 추가 및 변동 가능 ) = */
+/* ====================================== */
+.popup{ position: absolute; }
+.dim { position: fixed; right: 0; left: 0; bottom: 0; top: 0; display: none; background: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+}
+.dim:hover { cursor: pointer; }
+label:hover { cursor: pointer; }
+.closebtn:hover { cursor: pointer; }
+
+/* 탭 사용시 */
+.tab { display: none; }
+.tab_active { display: block; }
+/* a링크의 기본 이벤트 막기 - js상에서 할 필요가 없다. */
+.unLink { pointer-events: none; }
+.unLink:hover { cursor: pointer; }
+
+/* select 태그의 custom */
+.selectWrap { position: relative; }
+.selectWrap:before {
+  content: '';
+  /* content 변경 */
+  color: #fff;
+  /* 색상 변경 */
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  pointer-events: none;
+}
+select { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; width: 100%; border: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+select::-ms-expand { display: none; }
