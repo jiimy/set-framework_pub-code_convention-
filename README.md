@@ -24,9 +24,9 @@ assets
   ├─lib   #외부 css정의 
   │ └─ slick.css 등 (필요에 따라 수정된 것은 pc_slick.css, m_slick.css와 같이 덮어씌우기로 사용)
   └─module  #mixin.css mixin및 $등등 scss함수들, table이나 button에 대한 타입별 style정의들 
-    └─ mixin.scss, theme.css(table이나 button에 대한 type별 정의)
+    └─ mixin.scss, theme.css(table이나 button에 대한 type별 정의) -> index.css로 묶을수있다. 
 html
-├─main.html(jsp)  #기본적으로 ../assets/css/base/index.css를 불러오고, 필요에 따라 정의된 css불러오기 
+├─main.html(jsp)  #기본적으로 ../assets/css/base/index.css와 ../assets/css/module/index.css 를 불러오고, 필요에 따라 정의된 css불러오기 
 │ └─header.(jsp)  #jsp로 사용할때는 header.jsp, footer.jsp, popup.jsp 등등 공통으로 쓰이는 것들 분할
 ├─sub1.html(jsp)
 └─sub..html(jsp)
