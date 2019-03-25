@@ -4,27 +4,33 @@
 
 ### 전처리 환경(less는제외(cdn등 사용법이 편리), scss, sass)에서 작업하며, spa중 리액트처럼 컴포넌트 구분을 원칙으로 합니다. 
 
-#### !는 폴더. @는 파일
+#### 한 개의 css파일안에 각각의 media query 처리
+pc와 mobile의 파일을 분할한 이유는 관리가 좀더 귀찮긴하지만 불필요하게 css가 불러오지 않게 하기 위함. 
 
 <pre>
-!assets 
-├─!js
-│ ├─!lib		#외부 스크립트 정의 ( jquery, jquery-ui를 제외한 나머지)
-│ ├─!base		#제이쿼리종류들..jquery, jquery-ui등등
-│ ├─!custom		#실제 작업 custom.js
-└─!css
-  ├─!base        #reset.css , font.css, commmon.css, basic.css(사용자정의 css mg:30px), index.Scss('다른 css들 @import');
-  ├─!component		#각 component별 css정의, 구분별로 폴더로 따로 만들어도됨. index.Scss
-  ├─!lib		#외부 css정의(slick.css) 
-  └─!module 		#mixin.css mixin및 $등등 scss함수들
-!html
-├─main.html(jsp) #link:css(../assets/css/base/(컴파일된 index.css)..등등 /*css폴더 안에서 index로 각각의 폴더안의 css묶어도될듯*/)
+assets 
+├─js
+│ ├─lib		#외부 스크립트 정의 ( jquery, jquery-ui를 제외한 나머지)
+│ └─slick.js 등..외부 cdn
+│ ├─base		#제이쿼리종류들..jquery, jquery-ui등등
+│ │ └─jq.js 등..기본으로 깔리는 js
+│ └─custom		#실제 작업 custom.js
+│   └─popup.js등 필요에 의해 만들어진 custom js
+└─css
+  ├─base  #basic.css(사용자정의 css mg:30px), index.Scss('다른 css들 @import');
+  │ └─ reset.css, normalize.css, font.css, basic.css, index.css
+  ├─component(pages)		#각 component 또는 page 별 css정의
+  │ └─ headder.css, footer.css, m_header.css, m_footer.css, admin_page.css 등
+  ├─lib		#외부 css정의 
+  │ └─ slick.css 등 (필요에 따라 수정된 것은 pc_slick.css, m_slick.css와 같이 덮어씌우기로 사용)
+  └─module 		#mixin.css mixin및 $등등 scss함수들, table이나 button에 대한 타입별 style정의들 
+    └─ mixin.scss, theme.css(table이나 button에 대한 type별 정의)
+html
+├─main.html(jsp) #기본적으로 ../assets/css/base/index.css를 불러오고, 필요에 따라 정의된 css불러오기 
 │ └─header.(jsp) #jsp로 사용할때는 header.jsp, footer.jsp, popup.jsp 등등 공통으로 쓰이는 것들 분할
 ├─sub1.html(jsp)
 └─sub..html(jsp)
 </pre>
-
-모바일과 pc별도일시 css 폴더 안에 pc와 mobile의 각각의 폴더가 있고 공통된 것은 pc와 mobile 형제로 둔다.
 
 - - -
 
