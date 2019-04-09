@@ -5,14 +5,15 @@
 /* - 가독성 및 가시성에 유의하고, 이해 및 사용성의 편리에 집중한다. */
 /* - 모든 text관련 css는 t- 로 명명한다. */
 
+
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 /* 화면 내의 모든 z-index값을 정의한다. */
 /* ============================= */
 /* = z-index 정의서 (변동 가능) = */
 /* ============================ */
 /*
-popup : 
-dim : 
+popup :  100
+dim : 90
 slide : 
 */
 
@@ -34,8 +35,8 @@ slide :
 .clear_fix:after { display: block;  content: '';  clear: both; }
 
 /* 버튼 layout의 갯수에 상관없이 가운데로 오게 하기 */
-.l-btnWrap { text-align: center; }
-.l-btnWrap a, .l-btnWrap div, .l_btnWrap button{ display: inline-block; }
+.l-btn-wrap { text-align: center; }
+.l-btn-wrap a, .l-btn-wrap div, .l_btn-wrap button{ display: inline-block; }
 
 /* margin과 padding속성-마진 음수일경우 뒤에 - 를 하나 더 붙임 */
 /* 퍼센트일 경우 뒤에 p (p가 percent가 될수도, point가 될 수도 있어서 혼돈이 올 수 있겠다.) */
@@ -51,14 +52,14 @@ slide :
 
 /* Special layout */
 /* 가로에 맞춰 세로도 유지되게 */
-.l-ratioBoxWrapper{
+.l-ratiobox-wrapper{
   position: relative;
 	width: 100%;
 	height: 0;
 	overflow: hidden;
 	padding-bottom: 56.26%;
 }
-.l-ratioBoxWrapper .item{
+.l-ratiobox-wrapper .item{
   position: absolute;
 	top: 0;
 	left: 0;
@@ -109,8 +110,8 @@ label:hover { cursor: pointer; }
 }
 
 /* select 태그의 custom */
-.selectWrap { position: relative; }
-.selectWrap:before {
+.select-wrap { position: relative; }
+.select-wrap:before {
   content: '';
   /* content 변경 */
   color: #fff;
