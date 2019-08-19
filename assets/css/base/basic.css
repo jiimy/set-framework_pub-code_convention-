@@ -6,6 +6,7 @@
 /* - 모든 text관련 css는 t- 로 명명한다. */
 
 
+// @import '../../style/helpers/index';
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 /* 화면 내의 모든 z-index값을 정의한다. */
 /* ============================= */
@@ -13,9 +14,22 @@
 /* ============================ */
 /*
 popup :  100
+popup-content : 110;
 dim : 90
-slide : 
+slide :
 */
+.zindex0 {
+  z-index: 0;
+}
+
+$zindex : (
+  popup:100,
+  popup-content:110,
+  dim:90,
+  header:20,
+);
+
+
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
@@ -24,28 +38,102 @@ slide :
 /* ============================ */
 .block { display: block !important; }
 .none { display: none !important; }
-
+.inlineblock { display: inline-block!important; }
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
 /* ============================ */
 /* = layout 속성 ( 추가 가능 ) = */
 /* ============================ */
-.l-left { float: left; }
-.l-right { float: right;}
+/* 테이블 태그 대체용 */
+.l-table { display: table; width:100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  @include vw-convert-mo(){
+    display: block;
+  }
+}
+.l-table-row { display: table-row;
+  @include vw-convert-mo(){
+    display: block;
+  }
+}
+.l-table-th, .l-table-cell { display: table-cell; 
+  @include vw-convert-mo(){
+    display: inline-block;
+  }
+}
+.l-table-cell {
+  // cursor: pointer;
+}
+
+.opacity3 {
+  opacity: 0.3;
+}
+/* 테이블처럼 보이는 layout style */
+// virtual 의  V 
+.v-table{
+  display: block;
+}
+.v-table-row {
+  display: block;
+  font-size:0;
+  &:before{
+    display: inline-block;
+    height:100%;
+    vertical-align: middle;
+    content:'';
+  }
+}
+.v-table-th, .v-table-cell {
+  display: inline-block;
+  @include vw-convert(font-size, 16px);
+  @include vw-convert1366(font-size, 16px);
+}
+.l-half-l, .l-half-r{
+  display: inline-block;
+  width:50%;
+}
+.l-half-l {
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.l-half-r {
+  text-align: right;
+  vertical-align: middle;
+  .l-filter, .l-brand-search {
+    text-align: left;
+  }
+}
+
+.l-left { float: left; 
+  @include stat(float,none,mo);
+}
+.l-right { float: right;
+  @include stat(float,none,mo);
+}
 .clear_fix:after { display: block;  content: '';  clear: both; }
 
 /* 버튼 layout의 갯수에 상관없이 가운데로 오게 하기 */
-.l-btn-wrap { text-align: center; }
-.l-btn-wrap a, .l-btn-wrap div, .l_btn-wrap button{ display: inline-block; }
+.l-btn-wrap { text-align: center; letter-spacing:-5px;}
+.l-btn{ display: inline-block; letter-spacing:0; cursor:pointer;}
 
 /* margin과 padding속성-마진 음수일경우 뒤에 - 를 하나 더 붙임 */
 /* 퍼센트일 경우 뒤에 p (p가 percent가 될수도, point가 될 수도 있어서 혼돈이 올 수 있겠다.) */
+.width100p {
+  @include vw-convert-mo(){
+    width:100%!important;
+  }
+}
+
 .l-inner-10p{ padding: 10%; }
 .l_inner-r20{ padding-right:20px; }
 .l-outer-215-{ margin-bottom: -215px; }
 
+.l-mt-20{ margin-top: 20px;}
+
 /* width */
 .l-width240{ width: 240px; }
+
 
 /* vertical-align */
 .l-align_middle { vertical-align: middle; }
@@ -78,17 +166,14 @@ slide :
 .t-right{ text-align: right; }
 .t-left { text-align: left; }
 .t-weight300 { font-weight: 300; }
+.t-bold {font-weight: 500;}
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
-/* ====================================== */
-/* = Component 속성 ( 추가 및 변동 가능 ) = */
-/* ====================================== */
-.popup{ position: absolute; }
-.dim { position: fixed; right: 0; left: 0; bottom: 0; top: 0; display: none; background: rgba(0, 0, 0, 0.5);
-  z-index: 9;
-}
-.dim:hover { cursor: pointer; }
+/* ============================================= */
+/* = basic Component 속성 ( 추가 및 변동 가능 ) = */
+/* =============================================*/
+
 label:hover { cursor: pointer; }
 .closebtn:hover { cursor: pointer; }
 
@@ -126,3 +211,99 @@ label:hover { cursor: pointer; }
 }
 select { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; width: 100%; border: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
 select::-ms-expand { display: none; }
+
+.blind {
+ overflow:hidden;
+ position:absolute;
+ width:1px;
+ height:1px;
+ clip:rect(1px, 1px, 1px, 1px) ;
+}
+
+.textarea {
+  ul, ol {
+    padding-left:16px;
+  }
+  ul li {
+    list-style: disc;
+  }
+  ol li {
+    list-style: decimal;
+  }
+}
+/* ============================ */
+/* = evennt 속성 (변동 가능 ) = */
+/* ============================ */
+
+.not-drag {
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  user-select:none;
+}
+
+.none-event {
+  pointer-events: none!important;
+}
+
+.v-hidden {
+  visibility: hidden;
+}
+
+.dotdotdot {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.m-reverseflex{
+  @include vw-convert-mo(){
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+.m-layer{
+  display: none!important;
+  @include vw-convert-mo(){
+    display: block!important;
+  }
+}
+.pc-layer{
+  display: block;
+  @include vw-convert-mo(){
+    display: none!important;
+  }
+}
+body {
+  @include vw-convert-mo(){
+    overflow-y: auto;
+  }
+}
+
+.is-true-bg{
+  background:$true!important;
+}
+.is-chk-bg{
+  background:$chk!important;
+}
+.is-false-bg{
+  background:$false!important;
+}
+.is-alert-bg{
+  background:$alert!important;
+}
+.animated.btn-extension{
+  display: none!important;
+  @include vw-convert-mo(){
+    display: block!important;
+  }
+}
+
+span.b {
+  font-weight: 500;
+}
+.cursor {
+  cursor: pointer;
+}
